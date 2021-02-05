@@ -1,0 +1,23 @@
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  padding-top: 30px;
+  font-size: 48px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.header .scores {
+  width: 275px;
+  margin: 25px auto 0 auto;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scores span:nth-child(2) {
+  margin-right: 30px;
+}
