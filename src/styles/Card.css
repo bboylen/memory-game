@@ -2,3 +2,7 @@
   background-color: lightcoral;
   height: 200px;
 }
+
+.card:hover {
+  cursor: pointer;
+}

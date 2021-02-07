@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Card from "./Card";
 import "../styles/Gameboard.css";
 import colorBank from "../assets/colors.json";
+import uniqid from 'uniqid';
 
 function Gameboard(props) {
-  const { handleSelection } = props;
+  const { handleSelection, palette } = props;
 
-  const colorData = colorBank.colors;
+  const colorData = colorBank[palette];
 
   const generateCards = (n) => {
     const selectedColors = [];
@@ -24,7 +25,7 @@ function Gameboard(props) {
   return (
     <div className="gameboard">
       {colorArray.map((color) => (
-        <Card handleSelection={handleSelection} color={color}/>
+        <Card key={uniqid()} handleSelection={handleSelection} color={color}/>
       ))}
     </div>
   );

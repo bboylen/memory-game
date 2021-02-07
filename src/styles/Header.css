@@ -21,3 +21,12 @@
 .scores span:nth-child(2) {
   margin-right: 30px;
 }
+
+#palette-btn {
+  display:inline-block;
+  margin-top: 15px;
+}
+
+#palette-btn:hover {
+  cursor: pointer;
+}
