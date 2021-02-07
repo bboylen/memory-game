@@ -4,6 +4,8 @@ import "../styles/Gameboard.css";
 import colorBank from "../assets/colors.json";
 
 function Gameboard(props) {
+  const { handleSelection } = props;
+
   const colorData = colorBank.colors;
 
   const generateCards = (n) => {
@@ -19,9 +21,6 @@ function Gameboard(props) {
 
   const colorArray = generateCards(8);
 
-  const { handleSelection } = props;
-  console.log(handleSelection);
-  // const cards = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <div className="gameboard">
       {colorArray.map((color) => (

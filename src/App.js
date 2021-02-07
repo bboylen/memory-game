@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles/App.css";
 import Gameboard from "./components/Gameboard";
 import Header from "./components/Header";
@@ -9,26 +9,24 @@ function App() {
   const [cardArray, setCardArray] = useState([]);
 
   const handleSelection = (e) => {
-    console.log(e)
+    console.log(e.target.style['background-color']);
     if (e.target.color) {
     } else {
       setScore(score + 1);
-      setHighScore(checkHighScore());
     }
   };
 
-  const checkHighScore = () => {
-    return score > highScore ? score : highScore;
-  };
+  useEffect(() => {
+    setHighScore(score > highScore ? score : highScore);
+  }, [score]);
 
   return (
     <div className="page-wrapper">
       <Header
         score={score}
         highScore={highScore}
-        handleSelection={handleSelection}
       />
-      <Gameboard />
+      <Gameboard handleSelection={handleSelection} />
     </div>
   );
 }
